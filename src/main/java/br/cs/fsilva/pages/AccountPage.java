@@ -10,7 +10,7 @@ public class AccountPage extends BasePage {
   }
 
   public void salvar(){
-    clicarRadioEcheckbox(By.xpath("//button[.='Salvar']"));
+    clicarBotaoPorTexto("Salvar");
   }
 
   public String obterMensagemSucesso(){
