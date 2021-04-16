@@ -1,0 +1,13 @@
+Testes a serem feitos
+1 - Inserir Conta
+2 - Alterar Conta
+3 - inserir conta com o mesmo nome
+4 - Inserir movimentação
+5 - Campos obrigatorios da movimentação
+6 - movimentação futura
+7 - remover movimentação
+8 - remover conta com movimentação
+9 - saldo das contas
+10 - Resumo mensal
+
+obs: sempre checando as mensagens de erro / corretas

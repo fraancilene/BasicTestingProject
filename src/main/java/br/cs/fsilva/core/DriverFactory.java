@@ -29,7 +29,6 @@ public class DriverFactory {
     }
 
     public static void killDriver(){
-
         if (driver != null) {
             driver.quit();
             driver = null;

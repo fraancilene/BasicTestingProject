@@ -2,7 +2,6 @@ package br.cs.fsilva.pages;
 
 import br.cs.fsilva.core.BasePage;
 import br.cs.fsilva.core.DriverFactory;
-import org.openqa.selenium.By;
 
 public class LoginPage extends BasePage {
 
@@ -22,9 +21,9 @@ public class LoginPage extends BasePage {
     clicarBotaoPorTexto("Entrar");
   }
 
-//  public void logar (String email, String senha){
-//    setEmail(email);
-//    setSenha(senha);
-//    entrar();
-//  }
+  public void logar (String email, String senha){
+    setEmail(email);
+    setSenha(senha);
+    entrar();
+  }
 }

@@ -56,7 +56,4 @@ public class MovementPage extends BasePage {
     }
     return retorno;
   }
-
-
-
 }

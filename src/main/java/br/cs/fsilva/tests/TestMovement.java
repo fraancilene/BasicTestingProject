@@ -1,17 +1,22 @@
 package br.cs.fsilva.tests;
 
 import br.cs.fsilva.core.BaseTest;
+import br.cs.fsilva.core.Propriedades;
 import br.cs.fsilva.pages.MenuPage;
 import br.cs.fsilva.pages.MovementPage;
 import br.cs.fsilva.utils.DataUtils;
 import org.junit.Assert;
+import org.junit.FixMethodOrder;
 import org.junit.Test;
+import org.junit.runners.MethodSorters;
+
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
 import static br.cs.fsilva.utils.DataUtils.obterDataFormatada;
 
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class TestMovement extends BaseTest {
 
   MenuPage menuPage = new MenuPage();
@@ -19,14 +24,15 @@ public class TestMovement extends BaseTest {
 
 
   @Test
-  public void testInserirMovimentacao(){
+  public void test1_InserirMovimentacao(){
     menuPage.acessarTelaInserirMovimentacao();
-    movePage.setDataMovimentacao("01/02/2021");
-    movePage.setDataPagamento("02/02/2021");
+    movePage.setDataMovimentacao(obterDataFormatada(new Date()));
+    movePage.setDataPagamento(obterDataFormatada(new Date()));
     movePage.setDescricao("Movimentação de Teste");
     movePage.setInteressado("Interessado qualquer");
     movePage.setValor("500");
-    movePage.setContas("Conta teste");
+    movePage.setContas(Propriedades.NOME_CONTA_ALTERADA);
+
     movePage.setStatusPago();
     movePage.salvar();
 
@@ -34,7 +40,7 @@ public class TestMovement extends BaseTest {
   }
 
   @Test
-  public void testCamposObrigatorios(){
+  public void test2_CamposObrigatorios(){
     menuPage.acessarTelaInserirMovimentacao();
     movePage.salvar();
     // assertivas
@@ -49,7 +55,7 @@ public class TestMovement extends BaseTest {
   }
 
   @Test
-  public void testInserirMovimentacaoFutura(){
+  public void test3_InserirMovimentacaoFutura(){
     menuPage.acessarTelaInserirMovimentacao();
 
     Date dataFutura = DataUtils.obterDataComDiferencaDias(5);
@@ -59,7 +65,7 @@ public class TestMovement extends BaseTest {
     movePage.setDescricao("Movimentação de Teste");
     movePage.setInteressado("Interessado qualquer");
     movePage.setValor("500");
-    movePage.setContas("Conta teste");
+    movePage.setContas(Propriedades.NOME_CONTA_ALTERADA);
     movePage.setStatusPago();
     movePage.salvar();
 

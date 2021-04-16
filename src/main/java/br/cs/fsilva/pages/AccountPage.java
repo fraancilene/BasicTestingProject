@@ -24,4 +24,9 @@ public class AccountPage extends BasePage {
     obterCelula("Conta", contaTeste, "Ações" , "tabelaContas")
             .findElement(By.xpath(". //span[@class='glyphicon glyphicon-edit']")).click();   //*[@id='tabelaContas']//tbody/tr[5]/td[2]//span[@class='glyphicon glyphicon-edit']
   }
+
+  public void clicarExcluirConta(String contaTeste) {
+    obterCelula("Conta", contaTeste, "Ações" , "tabelaContas")
+            .findElement(By.xpath(". //span[@class='glyphicon glyphicon-remove-circle']")).click();   //*[@id='tabelaContas']//tbody/tr[5]/td[2]//span[@class='glyphicon glyphicon-edit']
+  }
 }
