@@ -22,11 +22,11 @@ public class AccountPage extends BasePage {
 
   public void clicarAlterarConta(String contaTeste) {
     obterCelula("Conta", contaTeste, "Ações" , "tabelaContas")
-            .findElement(By.xpath(". //span[@class='glyphicon glyphicon-edit']")).click();   //*[@id='tabelaContas']//tbody/tr[5]/td[2]//span[@class='glyphicon glyphicon-edit']
+            .findElement(By.xpath("//span[@class='glyphicon glyphicon-edit']")).click();   //*[@id='tabelaContas']//tbody/tr[5]/td[2]//span[@class='glyphicon glyphicon-edit']
   }
 
   public void clicarExcluirConta(String contaTeste) {
     obterCelula("Conta", contaTeste, "Ações" , "tabelaContas")
             .findElement(By.xpath(". //span[@class='glyphicon glyphicon-remove-circle']")).click();   //*[@id='tabelaContas']//tbody/tr[5]/td[2]//span[@class='glyphicon glyphicon-edit']
   }
-}
+} //*[@id="tabelaContas"]/tbody/tr[1]/td[2]/a[1]/span

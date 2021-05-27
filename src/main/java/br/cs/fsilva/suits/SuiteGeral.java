@@ -20,19 +20,19 @@ import static br.cs.fsilva.core.DriverFactory.killDriver;
         TestResume.class
 
 })
-public class SuiteGeral {
+public class  SuiteGeral {
 
   private static LoginPage page = new LoginPage();
 
   // efetuando login aqui na suite, para acelerar os testes. Antes estava na BaseTest
-  @BeforeClass
-  public static void inicializa(){
-    page.acessarTelaInicial();
-
-    page.setEmail("fran@silva");
-    page.setSenha("123456");
-    page.entrar();
-  }
+//  @BeforeClass
+//  public static void inicializa(){
+//    page.acessarTelaInicial();
+//
+//    page.setEmail("fran@silva");
+//    page.setSenha("123456");
+//    page.entrar();
+//  }
 
   @AfterClass
   public static void finaliza(){
@@ -46,3 +46,7 @@ public class SuiteGeral {
    * O JUnit não garante a ordem que vai executar os testes, para isso aplicamos um recurso chamado: fix Method order
    */
 }
+/*
+o Junit não tem suporte nativo ao paralelismo, utilizaremos o plugin 'sure fire' do maven
+adicione ao pom as informações necessárias do plugin
+ */
